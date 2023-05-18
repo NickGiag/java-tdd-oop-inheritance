@@ -27,7 +27,7 @@ public class Library {
 
     // The following methods may contain code that you are unfamiliar with. The strange syntax of article -> something
     // is called a lambda expression (https://www.w3schools.com/java/java_lambda.asp)
-    public String checkInArticle(SuperPaper item) {
+    public String checkIn(SuperPaper item) {
         List<SuperPaper> filtered = getSuperPapers(item);
         
 
@@ -38,7 +38,7 @@ public class Library {
         return filtered.get(0).checkIn();
     }
 
-    public String checkOutArticle(SuperPaper item) {
+    public String checkOut(SuperPaper item) {
         List<SuperPaper> filtered = getSuperPapers(item);
 
         if (filtered.size() < 1) {

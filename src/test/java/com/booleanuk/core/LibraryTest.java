@@ -39,8 +39,8 @@ public class LibraryTest {
         library.addToStock(article);
         library.addToStock(articleOther);
         articleOther.onLoan = true;
-        Assertions.assertEquals("item is not currently on loan",library.checkInArticle(article));
-        Assertions.assertEquals("item has been checked in",library.checkInArticle(articleOther));
+        Assertions.assertEquals("item is not currently on loan",library.checkIn(article));
+        Assertions.assertEquals("item has been checked in",library.checkIn(articleOther));
 
     }
 
