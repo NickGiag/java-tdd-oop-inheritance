@@ -9,6 +9,12 @@ public class Library {
     List<Book> books;
     List<Newspaper> newspapers;
 
+    public Library() {
+        this.articles=new ArrayList<>();
+        this.books=new ArrayList<>();
+        this.newspapers=new ArrayList<>();
+    }
+
     public void addToStock(SuperPaper item) {
         if (item instanceof Article)
             this.articles.add((Article) item);
