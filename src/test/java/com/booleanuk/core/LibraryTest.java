@@ -5,9 +5,16 @@ import org.junit.jupiter.api.Test;
 
 public class LibraryTest {
     Library library = new Library();
-    SuperPaper article = new Article("Jogn the great");
+
+    SuperPaper article = new Article("John the great");
     SuperPaper newsPaper = new Newspaper("Nick the lazy");
     SuperPaper articleOther = new Article("Whatever");
+
+    Author author1 = new Author("Edward", "ed@boolean.uk", "boolean.uk");
+    Author author2 = new Author("Nigel", "nigel@boolean.uk", "boolean.uk");
+
+    Book book = new Book("Dave in new adventures", author1);
+    Article anotherOtherArticle = new Article("The day before tomorrow",author2);
 
     @Test
     void addToStockTest() {
@@ -34,6 +41,14 @@ public class LibraryTest {
         articleOther.onLoan = true;
         Assertions.assertEquals("item is not currently on loan",library.checkInArticle(article));
         Assertions.assertEquals("item has been checked in",library.checkInArticle(articleOther));
+
+    }
+
+    @Test
+    void authorTest() {
+
+        Assertions.assertEquals(author1,book.getAuthor());
+        Assertions.assertEquals(author2,anotherOtherArticle.getAuthor());
 
     }
 }
